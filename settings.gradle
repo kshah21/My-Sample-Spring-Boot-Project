@@ -1,0 +1,4 @@
+rootProject.name='allinone'
+
+include 'library'
+include 'application'

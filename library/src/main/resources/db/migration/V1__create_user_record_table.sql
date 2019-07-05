@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS user_record (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(60),
+    email VARCHAR(60),
+    userType VARCHAR(60)
+);

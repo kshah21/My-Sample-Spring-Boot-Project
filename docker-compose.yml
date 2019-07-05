@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  docker-mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      - MYSQL_PASSWORD=kunal
+      - MYSQL_USER=kunal
+      - MYSQL_DATABASE=user_db
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    ports:
+      - 3306:3306

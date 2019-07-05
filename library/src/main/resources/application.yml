@@ -2,3 +2,22 @@ server:
   port: 8086
   servlet:
     contextPath: /userissuer/v1
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: kunal
+    password: kunal
+    url: jdbc:mysql://localhost:3306/user_db
+  flyway:
+    url: jdbc:mysql://localhost:3306/user_db
+    user: kunal
+    password: kunal
+    schemas: user_db
+    locations: classpath:db/migration
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect

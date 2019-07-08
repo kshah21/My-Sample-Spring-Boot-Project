@@ -1,0 +1,10 @@
+server:
+  port: 8087
+  servlet:
+    contextPath: /website
+
+user-service:
+  hostname: http://localhost:8086
+  context-path: /userissuer/v1
+  create-path: /create-user
+  get-path: /get-user

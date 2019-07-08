@@ -5,7 +5,6 @@ import website.client.UserClient;
 import website.model.LoginRequest;
 import website.model.User;
 import website.model.UserRequest;
-import website.model.UserType;
 
 import static website.model.UserType.ADMIN;
 import static website.model.UserType.REGULAR;
@@ -22,9 +21,9 @@ public class UserService {
     public User createUser(LoginRequest loginRequest) {
         final UserRequest userRequest;
         if(loginRequest.getUsername().contains("admin")) {
-            userRequest = new UserRequest(loginRequest.getUsername(), ADMIN);
+            userRequest = new UserRequest(loginRequest.getUsername(), loginRequest.getPassword(), ADMIN);
         } else {
-            userRequest = new UserRequest(loginRequest.getUsername(), REGULAR);
+            userRequest = new UserRequest(loginRequest.getUsername(), loginRequest.getPassword(), REGULAR);
         }
         return userClient.createUser(userRequest);
     }
@@ -34,6 +33,6 @@ public class UserService {
     }
 
     public User getUserByName(String username) {
-        return userClient.getUser(new UserRequest(username, REGULAR));
+        return userClient.getUser(new UserRequest(username, "", REGULAR));
     }
 }

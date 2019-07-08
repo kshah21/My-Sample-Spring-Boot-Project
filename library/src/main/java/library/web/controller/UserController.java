@@ -32,4 +32,11 @@ public class UserController {
                 .map(userEntity -> ResponseEntity.ok().body(userEntity))
                 .orElse(ResponseEntity.noContent().build());
     }
+
+    @PostMapping("/get-user")
+    public ResponseEntity<User> getUser(@RequestBody final UserRequest userRequest) {
+        return userService.getUser(userRequest)
+                .map(userEntity -> ResponseEntity.ok().body(userEntity))
+                .orElse(ResponseEntity.noContent().build());
+    }
 }

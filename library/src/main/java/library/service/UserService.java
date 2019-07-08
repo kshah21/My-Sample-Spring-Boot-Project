@@ -27,6 +27,15 @@ public class UserService {
         return userRepository.findById(id).map(this::createUserFrom);
     }
 
+    public Optional<User> getUser(final UserRequest requestedUser) {
+        for (UserEntity userEntity : userRepository.findAll()) {
+            if (userEntity.getName().equals(requestedUser.getName())) {
+                return Optional.of(createUserFrom(userEntity));
+            }
+        }
+        return Optional.empty();
+    }
+
     private Boolean alreadyExists(final UserRequest requestedUser) {
 
         for (UserEntity userEntity : userRepository.findAll()) {

@@ -5,4 +5,4 @@ CREATE TABLE user_record (
     name VARCHAR(60),
     email VARCHAR(60),
     user_type VARCHAR(60)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;;
+);

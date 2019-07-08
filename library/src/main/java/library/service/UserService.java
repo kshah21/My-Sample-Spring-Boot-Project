@@ -49,6 +49,7 @@ public class UserService {
     private UserEntity createUserEntityFrom(final UserRequest userRequest) {
         return new UserEntity(
                 userRequest.getName(),
+                userRequest.getPassword(),
                 String.format("%s@super.com", userRequest.getName()),
                 userRequest.getUserType()
         );
@@ -58,6 +59,7 @@ public class UserService {
         return new User(
                 entity.getId(),
                 entity.getName(),
+                entity.getPassword(),
                 entity.getEmail(),
                 entity.getUserType()
         );

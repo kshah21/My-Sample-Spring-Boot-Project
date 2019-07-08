@@ -10,6 +10,7 @@ public class UserEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String password;
     private String email;
     @Enumerated(EnumType.STRING)
     private UserType userType;
@@ -17,8 +18,9 @@ public class UserEntity implements Serializable {
     public UserEntity() {
     }
 
-    public UserEntity(String name, String email, UserType userType) {
+    public UserEntity(String name, String password, String email, UserType userType) {
         this.name = name;
+        this.password = password;
         this.email = email;
         this.userType = userType;
     }
@@ -26,6 +28,11 @@ public class UserEntity implements Serializable {
     @Column(name="name")
     public String getName() {
         return name;
+    }
+
+    @Column(name="password")
+    public String getPassword() {
+        return password;
     }
 
     @Column(name="email")

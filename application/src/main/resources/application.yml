@@ -2,9 +2,14 @@ server:
   port: 8087
   servlet:
     contextPath: /website
-
 user-service:
-  hostname: http://localhost:8086
+  hostname: https://library-responsive-turtle.cfapps.io
   context-path: /userissuer/v1
   create-path: /create-user
   get-path: /get-user
+
+---
+spring:
+  profiles: local
+user-service:
+  hostname: http://localhost:8086

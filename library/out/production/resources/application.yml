@@ -16,6 +16,8 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
+my-env: default
+
 ---
 spring:
   profiles: local
@@ -25,3 +27,23 @@ spring:
     password: kunal
     schemas: user_db
     locations: classpath:db/migration
+
+my-env: local
+
+---
+spring:
+  profiles: developement
+
+my-env: development
+
+---
+spring:
+  profiles: dev
+
+my-env: dev
+
+---
+spring:
+  profiles: cloud
+
+my-env: ${MY_ENV}

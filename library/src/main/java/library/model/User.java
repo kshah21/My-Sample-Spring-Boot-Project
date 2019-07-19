@@ -1,8 +1,6 @@
 package library.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class User {
     private Long id;
@@ -11,7 +9,6 @@ public class User {
     private final String email;
     private final UserType userType;
 
-    @JsonCreator
     public User(Long id, String name, String password, String email, UserType userType) {
         this.id = id;
         this.name = name;
